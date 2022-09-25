@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public static  int RESULT_ADD = 1;
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             String conteudo = editTextConteudo.getText().toString();
             conteudo += result + '\n';
             editTextConteudo.setText(conteudo);
+        } else if ( resultCode == ContatoActivity.RESULT_CANCEL){
+            Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show();
         }
     }
 }
